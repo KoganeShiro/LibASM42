@@ -1,0 +1,6 @@
+src/testing/hello_world.s
+libasm.a
+testing
+c
+test
+obj
