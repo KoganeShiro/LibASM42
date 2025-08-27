@@ -12,21 +12,28 @@ section .text
 ; Returns: ptr to the new duplicate str (dest_str)
 ft_strdup:
     ; take the src_str allocating the memory to duplicate it to dest_str
-
-    ; call ft_strlen
-    call ft_strlen ; will take rdi as param and return rax
-    ; allocate the memory using malloc
-    add rax, 1
-    mov rcx, rdi ;src
-    mov rdi, rax
-    call _malloc ;rdi is the param
-    cmp rax, 0
+    push rbx
+    mov rbx, rdi
+    
+    call ft_strlen 
+    add rax, 1 
+    mov rdi, rax    ; Size parameter for malloc
+    call _malloc 
+    
+    cmp rax, 0      ; Check if malloc failed
     je .malloc_fail
-    ; strcpy src_str dest_str
-    call strcpy
+    
+    ; Set up parameters for ft_strcpy(dest, src)
+    mov rdi, rax    ; dest
+    mov rsi, rbx    ; src
+    call ft_strcpy
+    
+    ; rax already contains the allocated memory address
+    pop rbx
     ret
-
-    .malloc_fail:
-        mov rax, 0
-        ret
+    
+.malloc_fail:
+    mov rax, 0
+    pop rbx 
+    ret
 
