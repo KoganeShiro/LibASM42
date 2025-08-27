@@ -8,13 +8,12 @@ COMPILATOR = nasm
 
 FLAGS = -f elf64
 
-SRCS =	ft_strlen.s
-#ft_read.s \
-		ft_strcmp.s \
+SRCS =	ft_strlen.s \
 		ft_strcpy.s \
-		ft_strdup.s \
-		ft_strlen.s \
+		ft_strcmp.s \
 		ft_write.s
+#		ft_read.s 
+#		ft_strdup.s
 
 # TEST = hello_world.s \
 # 		ft_itoa.s \
@@ -49,6 +48,9 @@ clean:
 
 fclean: clean
 		rm -f ${NAME}
+		rm -f test
+		rm -f c
+		rm -f testing
 
 re: fclean all
 
@@ -56,6 +58,6 @@ re: fclean all
 # 		ld -o testing $(TEST_OBJS_PATH) -L. -lasm -lc --dynamic-linker /lib64/ld-linux-x86-64.so.2
 
 test: all $(OBJ_DIR)
-	gcc $(TEST_DIR)c_test.c -L. -lasm -o test
+	gcc $(TEST_DIR)all_test.c -L. -no-pie -lasm -o test
 
 .PHONY: all clean fclean re test

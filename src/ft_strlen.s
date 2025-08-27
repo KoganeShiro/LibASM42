@@ -4,13 +4,13 @@ bits 64
 section .text
         global ft_strlen
 
-; ft_strlen(rdi = string pointer)
+; ft_strlen(rdi = arg string pointer)
 ; Returns length in rax
 ft_strlen:
-    xor rax, rax           ; counter = 0
+    mov rax, 0             ; counter = 0
     .loop:
-        cmp byte [rdi], 0  ; compare current char with null
-        je .end_loop       ; if null, exit loop
+        cmp byte [rdi], 0
+        je .end_loop
         inc rax            ; increment counter
         inc rdi            ; move to next character
         jmp .loop

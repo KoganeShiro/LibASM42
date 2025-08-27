@@ -6,14 +6,16 @@ section .text
 
 
 ft_strcpy:  
-    ;have two parameter: src and dest
+    ;have two parameter: rdi = dest, rsi = src  
     ;we should copy char by char from the src to the dest
-    ;incrementing for each until null
+    ;incrementing the index until null
+    ;ret: pointer to dest (rdi)
     mov rcx, 0
     .loop:
-        mov al, [rdi + rcx] ; Load byte from src
-        mov [rsi + rcx], al  ; Store byte to dest
+        mov al, [rsi + rcx] ; Load single byte from src
+        mov [rdi + rcx], al  ; Store byte to dest
         inc rcx
         cmp al, 0
-        je .loop
+        jne .loop
+        mov rax, rdi
         ret
