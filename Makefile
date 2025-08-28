@@ -11,9 +11,9 @@ FLAGS = -f elf64
 SRCS =	ft_strlen.s \
 		ft_strcpy.s \
 		ft_strcmp.s \
-		ft_write.s
-#		ft_read.s 
-#		ft_strdup.s
+		ft_write.s \
+		ft_read.s  \
+		ft_strdup.s
 
 # TEST = hello_world.s \
 # 		ft_itoa.s \

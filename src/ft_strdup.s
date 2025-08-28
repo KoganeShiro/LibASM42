@@ -3,7 +3,7 @@ bits 64
 
 extern ft_strlen
 extern ft_strcpy
-extern _malloc
+extern malloc
 
 section .text
     global ft_strdup
@@ -18,7 +18,7 @@ ft_strdup:
     call ft_strlen 
     add rax, 1 
     mov rdi, rax    ; Size parameter for malloc
-    call _malloc 
+    call malloc 
     
     cmp rax, 0      ; Check if malloc failed
     je .malloc_fail
