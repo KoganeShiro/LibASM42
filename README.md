@@ -28,8 +28,7 @@ All functions follow the System V AMD64 ABI calling convention (used on Linux x8
 	make test
 	```
 
-## Key Concepts for Assembly Beginners
-
+## Key Concepts for Assembly
 
 Assembly language is a low-level programming language that communicates directly with a computer’s hardware. Here are some essential concepts for getting started:
 
@@ -115,24 +114,7 @@ rsp → ┌─────────────┐
       │             │
 ```
 
-
-## How to Get Started
-
-1. **Read the Source**:  
-	Look at the `src/` directory for the assembly code. Each function is commented to explain what it does.
-
-2. **Test Your Functions**:  
-	The `_testing/all_test.c` file contains C tests for all assembly functions. You can run these to check correctness.
-
-3. **Practice**:  
-	Start with simple functions like `ft_strlen` and `ft_strcpy`. Build up to more complex ones as you get comfortable.
-
 ## Resources for Learning Assembly
-https://gitlab.com/x86-psABIs/x86-64-ABI
-
-https://filippo.io/linux-syscall-table/
-
-https://community.lambdatest.com/t/understanding-the-test-instruction-in-assembly-language/31686/2
 
 __FR__
 - [Openclassrom](https://openclassrooms.com/fr/courses/2288321-apprenez-a-programmer-en-assembleur-x86/2288775-introduction-installation)
@@ -143,3 +125,6 @@ __EN__
 - [Tutorialspoint](https://www.tutorialspoint.com/assembly_programming/assembly_introduction.htm)
 - [nasmtutorial](https://cs.lmu.edu/~ray/notes/nasmtutorial/)
 - [asmx64](https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf)
+
+[syscall table](https://filippo.io/linux-syscall-table/)
+[registers](https://www.cs.uaf.edu/2017/fall/cs301/lecture/09_11_registers.html)
