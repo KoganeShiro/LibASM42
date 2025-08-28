@@ -309,7 +309,7 @@ void test_read()
     printf("\nTest 2: Read from file with proper content\n");
     const char *filename = "test_read_file.tmp";
     const char *test_content = "Hello World for reading!";
-    
+
     int write_fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (write_fd != -1) {
         write(write_fd, test_content, strlen(test_content));
@@ -394,16 +394,16 @@ void test_strdup()
         printf("  ft_strdup result: %s\n", ft_result ? ft_result : "NULL");
         
         int results_match = 0;
-        int different_pointers = 0;
+        int different_string = 0;
         
         if (stdlib_result == NULL && ft_result == NULL) {
             results_match = 1;
-            different_pointers = 1;
+            different_string = 1;
         } else if (stdlib_result != NULL && ft_result != NULL) {
             results_match = (strcmp(stdlib_result, ft_result) == 0);
-            different_pointers = (ft_result != tests[i].input);
+            different_string = (ft_result != tests[i].input);
         }        
-        if (results_match && different_pointers) {
+        if (results_match && different_string) {
             printf("  " GREEN "✓ PASS\n" RESET);
             passed++;
         } else {
