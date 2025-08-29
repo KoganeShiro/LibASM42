@@ -18,7 +18,7 @@ ft_strdup:
     call ft_strlen 
     add rax, 1 
     mov rdi, rax    ; Size parameter for malloc
-    call malloc 
+    call malloc wrt ..plt
     
     cmp rax, 0      ; Check if malloc failed
     je .malloc_fail

@@ -21,7 +21,7 @@ ft_write:
     .error:
         mov rcx, rax
         neg rcx
-        call __errno_location ;get pointer of errno in rax
+        call __errno_location wrt ..plt ;get pointer of errno in rax
         mov [rax], rcx
         mov rax, -1
         ret
