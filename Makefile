@@ -1,6 +1,6 @@
 NAME = libasm.a
 
-COMPILATOR = nasm
+ASSEMBLE = nasm
 
 FLAGS = -f elf64
 
@@ -30,7 +30,7 @@ ${NAME}: $(OBJ_DIR) $(OBJS_PATH)
 		ar rc ${NAME} ${OBJS_PATH}
 
 $(OBJ_DIR)%.o: $(SRCS_DIR)%.s
-		$(COMPILATOR) ${FLAGS} -s $< -o $@
+		$(ASSEMBLE) ${FLAGS} -s $< -o $@
 
 clean:
 		rm -rf ${OBJ_DIR}
